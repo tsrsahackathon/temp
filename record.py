@@ -1,11 +1,11 @@
 import pyaudio
 import wave
 import RPi.GPIO as GPIO
-
+import time
 form_1 = pyaudio.paInt16  # 16-bit resolution
 chans = 1  # 1 channel
 samp_rate = 16000  # 44.1kHz sampling rate
-chunk = 4096  # 2^12 samples for buffer
+chunk = 1024  # 2^12 samples for buffer
 dev_index = 2  # device index found by p.get_device_info_by_index(ii)
 wav_output_filename = 'test1.wav'  # name of .wav file
 
@@ -27,6 +27,7 @@ frames = []
 
 while True:
     if GPIO.input(11) == GPIO.HIGH:
+        time.sleep(1)
         # Button is pressed
         if not recording:
             # Start recording
@@ -38,7 +39,7 @@ while True:
             recording = False
 
     if recording:
-        data = stream.read(chunk)
+        data = stream.read(chunk, exception_on_overflow = False)
         frames.append(data)
 
     if not recording and len(frames) > 0:

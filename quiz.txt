@@ -1,0 +1,92 @@
+{"multiple_choice": [
+{
+"question": "Which civilization was one of the early civilizations in the Indian subcontinent?",
+"answers": [
+{"option": "Indus Valley Civilization", "correct": true},
+{"option": "Mughal Empire", "correct": false},
+{"option": "Gupta Empire", "correct": false},
+{"option": "Morai Empire", "correct": false}
+]
+},
+{
+"question": "When did the Indus Valley Civilization exist?",
+"answers": [
+{"option": "200 BCE - 150 BCE", "correct": false},
+{"option": "2500 BCE - 1500 BCE", "correct": true},
+{"option": "1500 BCE - 1000 BCE", "correct": false},
+{"option": "1000 BCE - 500 BCE", "correct": false}
+]
+},
+{
+"question": "What brought new cultural and religious elements to India?",
+"answers": [
+{"option": "Architectural models", "correct": false},
+{"option": "The Mughal Empire", "correct": false},
+{"option": "The Aryan migration", "correct": true},
+{"option": "The Gupta Empire", "correct": false}
+]
+},
+{
+"question": "Which empire left a lasting impact on India with architectural models like the Taj Mahal?",
+"answers": [
+{"option": "Moria Empire", "correct": false},
+{"option": "Gupta Empire", "correct": false},
+{"option": "Mughal Empire", "correct": true},
+{"option": "Indus Valley Civilization", "correct": false}
+]
+},
+{
+"question": "Who led the struggle for independence from British colonial rule in India?",
+"answers": [
+{"option": "Mark Mahany", "correct": false},
+{"option": "Mahatma Gandhi", "correct": true},
+{"option": "Jawaharlal Nehru", "correct": false},
+{"option": "Muhammad Ali Jinnah", "correct": false}
+]
+},
+{
+"question": "In which year did India gain its independence?",
+"answers": [
+{"option": "1947", "correct": true},
+{"option": "1950", "correct": false},
+{"option": "1930", "correct": false},
+{"option": "1920", "correct": false}
+]
+},
+{
+"question": "What was the result of the partition of India in 1947?",
+"answers": [
+{"option": "India and Pakistan were created as separate nations", "correct": true},
+{"option": "India was joined with Myanmar", "correct": false},
+{"option": "India became a British colony again", "correct": false},
+{"option": "India was divided into several states", "correct": false}
+]
+},
+{
+"question": "What kind of system of governance did India adopt after gaining independence?",
+"answers": [
+{"option": "Communist system", "correct": false},
+{"option": "Authoritarian system", "correct": false},
+{"option": "Democratic system", "correct": true},
+{"option": "Monarchical system", "correct": false}
+]
+},
+{
+"question": "What is the present status of India's political system?",
+"answers": [
+{"option": "Dictatorship", "correct": false},
+{"option": "Monarchy", "correct": false},
+{"option": "Republic", "correct": true},
+{"option": "Communism", "correct": false}
+]
+},
+{
+"question": "What is India known for in the modern world?",
+"answers": [
+{"option": "Its rich culture", "correct": true},
+{"option": "Its vast deserts", "correct": false},
+{"option": "Its polar ice caps", "correct": false},
+{"option": "Its technological advancements", "correct": false}
+]
+}
+]}
