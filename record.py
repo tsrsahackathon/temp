@@ -17,35 +17,43 @@ stream = audio.open(format=form_1, rate=samp_rate, channels=chans,
                     frames_per_buffer=chunk)
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(3, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-print("Waiting for button press...")
+print("Press the button to toggle recording...")
 
-while GPIO.input(3) == GPIO.LOW:
-    pass
-while GPIO.input(3) == GPIO.HIGH:
-    pass
-
-print("Button pressed, recording...")
+recording = False  # Initialize recording state
 
 frames = []
 
-while GPIO.input(3) == GPIO.LOW:
-    data = stream.read(chunk)
-    frames.append(data)
+while True:
+    if GPIO.input(11) == GPIO.HIGH:
+        # Button is pressed
+        if not recording:
+            # Start recording
+            print("Recording...")
+            recording = True
+        else:
+            # Stop recording
+            print("Stopped recording.")
+            recording = False
 
-print("Button released, stopped recording.")
-print("Finished recording.")
+    if recording:
+        data = stream.read(chunk)
+        frames.append(data)
 
-# Stop the stream, close it, and terminate the pyaudio instantiation
-stream.stop_stream()
-stream.close()
-audio.terminate()
+    if not recording and len(frames) > 0:
+        # Save the recorded audio when recording stops
+        print("Saving audio...")
+        # Stop the stream, close it, and terminate the pyaudio instantiation
+        stream.stop_stream()
+        stream.close()
+        audio.terminate()
 
-# Save the audio frames as a .wav file
-wavefile = wave.open(wav_output_filename, 'wb')
-wavefile.setnchannels(chans)
-wavefile.setsampwidth(audio.get_sample_size(form_1))
-wavefile.setframerate(samp_rate)
-wavefile.writeframes(b''.join(frames))
-wavefile.close()
+        # Save the audio frames as a .wav file
+        wavefile = wave.open(wav_output_filename, 'wb')
+        wavefile.setnchannels(chans)
+        wavefile.setsampwidth(audio.get_sample_size(form_1))
+        wavefile.setframerate(samp_rate)
+        wavefile.writeframes(b''.join(frames))
+        wavefile.close()
+        break
